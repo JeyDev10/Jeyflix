@@ -1,0 +1,121 @@
+{
+  "categorias": [
+    {
+      "id": 1,
+      "titulo": "Filmes",
+      "cor": "#6BD1FF",
+      "descricao":"Filmes fodas"
+    },
+    {
+      "id": 2,
+      "titulo": "Séries",
+      "cor": "#00C86F",
+      "descricao":"Séries maravilhosas "
+    },
+    {
+      "id": 4,
+      "titulo": "Games",
+      "cor": "orange",
+      "descricao":"Games brabos"
+      
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "categoriaId": 1,
+      "titulo": " O Senhor dos Anéis: A Sociedade do Anel",
+      "url": "https://www.youtube.com/watch?v=-xg-FkPtLag"
+    },
+    {
+      "id": 2,
+      "categoriaId": 1,
+      "titulo": "The Hobbit: The Battle of the Five Armies",
+      "url": "https://www.youtube.com/watch?v=ZSzeFFsKEt4"
+    },
+    {
+      "id": 3,
+      "categoriaId": 1,
+      "titulo": "Harry Potter and the Deathly Hallows",
+      "url": "https://www.youtube.com/watch?v=_EC2tmFVNNE"
+    },
+    {
+      "id": 4,
+      "categoriaId": 1,
+      "titulo": "Matrix",
+      "url": "https://www.youtube.com/watch?v=m8e-FF8MsqU"
+    },
+    {
+      "id": 5,
+      "categoriaId": 1,
+      "titulo": "Akira",
+      "url": "https://www.youtube.com/watch?v=ooKBenGK3R4"
+    },
+    {
+      "id": 6,
+      "categoriaId": 1,
+      "titulo": "ETERNAL SUNSHINE OF THE SPOTLESS MIND",
+      "url": "https://www.youtube.com/watch?v=GBEke6JixyE"
+    },
+    {
+      "id": 7,
+      "categoriaId": 1,
+      "titulo": "The Banker",
+      "url": "https://www.youtube.com/watch?v=j6GzbAECyy4"
+    },
+    {
+      "id": 8,
+      "categoriaId": 1,
+      "titulo": "Interestelar",
+      "url": "https://www.youtube.com/watch?v=frD_IiY_A3E"
+    },
+    {
+      "id": 9,
+      "categoriaId": 2,
+      "titulo": "MR. ROBOT",
+      "url": "https://www.youtube.com/watch?v=w_BXG9up-oE"
+    },
+    {
+      "id": 10,
+      "categoriaId": 2,
+      "titulo": "Black Mirror",
+      "url": "https://www.youtube.com/watch?v=1w8LBG2qbqc"
+    },
+    {
+      "id": 11,
+      "categoriaId": 2,
+      "titulo": "Lupin",
+      "url": "https://www.youtube.com/watch?v=RJKH-gJlO0s"
+    },
+    {
+      "id": 12,
+      "categoriaId": 2,
+      "titulo": "Lovecraft Country",
+      "url": "https://www.youtube.com/watch?v=a7XlZJ4F3e0"
+    },
+    {
+      "id": 13,
+      "categoriaId": 2,
+      "titulo": "Top Boy",
+      "url": "https://www.youtube.com/watch?v=vpHEe9HS2_A"
+    },
+    {
+      "id": 14,
+      "categoriaId": 2,
+      "titulo": "The Mandalorian",
+      "url": "https://www.youtube.com/watch?v=eW7Twd85m2g"
+    },
+    {
+      "id": 15,
+      "categoriaId": 2,
+      "titulo": "Supernatural",
+      "url": "https://www.youtube.com/watch?v=CX1Wn5zkfI8"
+    },
+    {
+      "id": 16,
+      "categoriaId": 2,
+      "titulo": "American Horror Story",
+      "url": "https://www.youtube.com/watch?v=L-WWR7bPvCI"
+    }
+  ]
+}
