@@ -1,6 +1,5 @@
 /* eslint-disable import/no-named-as-default */
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import useForm from '../../../hooks/useForm';
 
 import PageDefault from '../../../components/PageDefault';
@@ -9,12 +8,9 @@ import Button from '../../../components/Button';
 import LoadingComponent from '../../../components/LoadingComponent';
 import URL_BACKEND from '../../../config/globalVariables';
 import { createCategoria, deleteCategoria } from '../../../repositories/categoriaRepository';
+import {Form, ListWrapper} from './styles';
 
 export default function CadastroCategoria() {
-  const Form = styled.form`
-  
-  `;
-
   const valoresIniciais = {
     titulo: '',
     descricao: '',
@@ -79,17 +75,17 @@ export default function CadastroCategoria() {
       </Form>
       <div>
         {categorias.length === 0 && <LoadingComponent />}
-        <ul>
+        <ListWrapper>
           {categorias.map((categoria) => (
-            <li key={`${categoria.id}`}>
+            <ListWrapper.Item key={`${categoria.id}`}>
               {categoria.titulo}
               <div>
-                <Button onClick={() => handleDelete(categoria)}>Deletar</Button>
+                <Button background={"var(--primary)"} onClick={() => handleDelete(categoria)}>Excluir</Button>
               </div>
 
-            </li>
+            </ListWrapper.Item>
           ))}
-        </ul>
+        </ListWrapper>
       </div>
 
     </PageDefault>

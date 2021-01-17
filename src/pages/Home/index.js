@@ -26,7 +26,7 @@ function Home() {
   return (
     <>
       <PageDefault paddingOff>
-        <BannerMain videoTitle="Jey Sempre somem" videoDescription="JEY" url="https://youtu.be/JxS-wo9bhdo" />
+        <BannerMain videoTitle="A Ruína" videoDescription="League of Legends" url="https://www.youtube.com/watch?v=p8srPg8ltAI" />
         { categorias && categorias.map((categoria) => ((
           <Carousel
             category={categoria}
