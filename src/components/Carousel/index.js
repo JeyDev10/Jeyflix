@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  VideoCardGroupContainer, VideoCardList, Title, Description,
+  VideoCardGroupContainer, Title, Description, TitleWrapper,
 } from './styles';
 import VideoCard from './components/VideoCard';
 import Slider, { SliderItem } from './components/Slider';
@@ -28,8 +28,8 @@ function VideoCardGroup({
   return (
     <VideoCardGroupContainer>
       {categoryTitle && (
-        <>
-          <Title style={{ backgroundColor: categoryColor || 'red' }}>
+        <TitleWrapper>
+          <Title categoryColor={categoryColor}>
             {categoryTitle}
           </Title>
           {categoryDescription
@@ -38,7 +38,7 @@ function VideoCardGroup({
               {categoryDescription}
             </Description>
             )}
-        </>
+        </TitleWrapper>
       )}
       <Slider {...settings}>
         {videos.map((video, index) => {
