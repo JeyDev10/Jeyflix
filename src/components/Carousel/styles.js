@@ -1,36 +1,51 @@
 import styled from 'styled-components';
 
-export const Title = styled.h3`
-  font-style: normal;
-  font-weight: normal;
-  font-size: 35px;
-  line-height: 1;
-  margin-bottom: 16px;
-  display: inline-block;
-  padding: 20px;
-  background: red;
-  line-height: 1;
-  border-radius: 4px;
-
-  @media (max-width: 800px) {
-    font-size: 18px;
-    padding: 10px;
-  }
+export const TitleWrapper = styled.div`
+  display:flex;
+  align-items:center;
+  margin-bottom:10px;
 `;
 
 export const Description = styled.span`
-  margin-left: 16px;
+  display:block;
   text-decoration: none;
   transition: opacity .3s;
   cursor:context-menu;
+  opacity:0;
+  transition: 0.3s ease-in;
+  transform-origin: left center;
 
   &:hover{
     opacity: .5;
   }
   @media (max-width: 800px) {
-    display: block;
     margin-bottom: 16px;
     margin-left: 0;
+  }
+`;
+
+export const Title = styled.h3`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px;
+  margin:0;
+  cursor:context-menu;
+  font-weight:bold;
+  display: inline-block;
+
+  color:${({ categoryColor }) => (categoryColor || 'White')};
+  line-height: 1;
+  border-radius: 4px;
+
+  &:hover +${Description}{
+    transform:translateX(20%);
+    opacity:1;
+
+  }
+
+  @media (max-width: 800px) {
+    font-size: 18px;
+    padding: 10px;
   }
 `;
 
@@ -53,5 +68,5 @@ export const VideoCardGroupContainer = styled.section`
   min-height: 197px;
   margin-left: 5%;
   margin-right:5%;
-  margin-bottom: 16px;
+  margin-bottom: 50px;
 `;

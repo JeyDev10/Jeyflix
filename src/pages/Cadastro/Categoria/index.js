@@ -81,6 +81,7 @@ export default function CadastroCategoria() {
               {categoria.titulo}
               <div>
                 <Button background={"var(--primary)"} onClick={() => handleDelete(categoria)}>Excluir</Button>
+                <Button background={"#5151de"} onClick={() => handleDelete(categoria)}>Atualizar</Button>
               </div>
 
             </ListWrapper.Item>
