@@ -3,12 +3,15 @@ import React, { useState, useEffect } from 'react';
 import useForm from '../../../hooks/useForm';
 
 import PageDefault from '../../../components/PageDefault';
-import GenericInput from '../../../components/GenericInput';
+import CategoriaInputs from '../../../components/CategoriaInputs/index';
 import Button from '../../../components/Button';
 import LoadingComponent from '../../../components/LoadingComponent';
 import URL_BACKEND from '../../../config/globalVariables';
-import { createCategoria, deleteCategoria } from '../../../repositories/categoriaRepository';
-import {Form, ListWrapper} from './styles';
+import { createCategoria } from '../../../repositories/categoriaRepository';
+import CategoriaEditor from '../../../components/CategoriaEditor';
+import {
+  Form, ListWrapper, UpdateWrapper, ContentWrapper,
+} from './styles';
 
 export default function CadastroCategoria() {
   const valoresIniciais = {
@@ -16,6 +19,10 @@ export default function CadastroCategoria() {
     descricao: '',
     cor: '',
   };
+
+  const [
+    showInputUpdate, changeShowInputUpdate,
+  ] = useState(false);
 
   const { valores, handleFieldsChanges, clearForm } = useForm(valoresIniciais);
 
@@ -44,6 +51,11 @@ export default function CadastroCategoria() {
 
     setLastChange(deletedCategoria);
   };
+
+  function handleUpdate(updatedCategoria) {
+    console.log('plaw');
+  }
+
   useEffect(() => {
     fetch(`${URL_BACKEND}/categorias`)
       .then(async (resp) => {
@@ -53,7 +65,7 @@ export default function CadastroCategoria() {
           console.log(resposta);
           setTimeout(() => {
             setCategorias(resposta);
-          }, 4000);
+          }, 2000);
         }
       });
   }, [
@@ -68,27 +80,21 @@ export default function CadastroCategoria() {
       </h1>
 
       <Form onSubmit={handleSubmit}>
-        <GenericInput type="text" name="titulo" value={valores.titulo} onChange={handleFieldsChanges} desc="Nome da Categoria:" />
-        <GenericInput type="textarea" name="descricao" value={valores.descricao} onChange={handleFieldsChanges} desc="Descrição da Categoria:" />
-        <GenericInput type="color" name="cor" value={valores.cor} onChange={handleFieldsChanges} desc="Cor da Categoria:" />
+        <CategoriaInputs valores={valores} handleFieldsChanges={handleFieldsChanges} />
         <Button background="#141414">Salvar</Button>
       </Form>
       <div>
         {categorias.length === 0 && <LoadingComponent />}
         <ListWrapper>
           {categorias.map((categoria) => (
-            <ListWrapper.Item key={`${categoria.id}`}>
-              {categoria.titulo}
-              <div>
-                <Button background={"var(--primary)"} onClick={() => handleDelete(categoria)}>Excluir</Button>
-                <Button background={"#5151de"} onClick={() => handleDelete(categoria)}>Atualizar</Button>
-              </div>
-
-            </ListWrapper.Item>
+            <CategoriaEditor
+              key={categoria.id}
+              categoria={categoria}
+              setLastChange={setLastChange}
+            />
           ))}
         </ListWrapper>
       </div>
-
     </PageDefault>
   );
 }

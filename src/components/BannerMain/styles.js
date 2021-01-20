@@ -70,8 +70,9 @@ export const BannerMainContainer = styled.section`
   position: relative;
   color: #fff;
   background-image: ${({ backgroundImage }) => `url(${backgroundImage})`}; 
-  background-size: cover;
-  background-position: center;
+  background-size:cover;
+  background-position: center 20%;
+  background-repeat:no-repeat;
   @media (max-width: 800px) {
     height: auto;
     min-height: 50vh;

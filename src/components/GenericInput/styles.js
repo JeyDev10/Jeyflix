@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const InputWrapper = styled.div`
     position:relative;
+    width:100%;
     
 
     textarea{
@@ -30,7 +31,7 @@ export const Label = styled.label`
   font-style: normal;
   font-weight: 300;
   
-  transition: .3s;
+  transition: .4s;
 `;
 
 const InputPattern = `
@@ -78,6 +79,7 @@ const changeBorder = ({ value }) => {
 export const Input = styled.input`
 ${InputPattern}
 ${changeBorder}
+  
 
 `;
 

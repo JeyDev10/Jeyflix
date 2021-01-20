@@ -13,8 +13,7 @@ function createCategoria(novaCategoria) {
     if (!resp.ok) {
       throw new Error(`${'Ocorreu um erro, categoria não cadastrada ! Error'}${resp.status}`);
     }
-    const resposta = await resp.json();
-    return resposta;
+    return resp;
   });
 }
 
@@ -28,7 +27,22 @@ function deleteCategoria(idCategoria) {
     if (!resp.ok) {
       throw new Error(`Ocorreu um erro ao tentar excluir a categoria ! Error ${resp.status}`);
     }
-    console.log(resp);
+    return resp;
+  });
+}
+
+function updateCategoria(categoria) {
+  return fetch(`${URL_CATEGORIAS}/categorias/${categoria.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(categoria),
+  }).then((resp) => {
+    if (!resp.ok) {
+      throw new Error(`Ocorreu um erro ao tentar atualizar a categoria ! Error ${resp.status}`);
+    }
+    return resp;
   });
 }
 
@@ -39,7 +53,6 @@ function getAllCategoriasWithVideos() {
         throw new Error(`Ocorreu um erro ao tentar buscar as categorias ! Error ${resp.status}`);
       }
       const resposta = await resp.json();
-      console.log(resposta);
       return resposta;
     });
 }
@@ -57,5 +70,5 @@ function getAllCategorias() {
 }
 
 export {
-  createCategoria, deleteCategoria, getAllCategoriasWithVideos, getAllCategorias,
+  createCategoria, deleteCategoria, getAllCategoriasWithVideos, getAllCategorias, updateCategoria,
 };
